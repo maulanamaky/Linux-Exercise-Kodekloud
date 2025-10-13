@@ -1,0 +1,17 @@
+---
+- name: Make New Group and Add New User
+  hosts: servers
+  become: yes
+
+  tasks:
+  - name: Make New Group
+    group:
+      name: nautilus_developers
+      state: present
+  - name: Make New User and Add To Group
+    user:
+      name: ko
+      state: present
+      groups: nautilus_developers
+      shell: /bin/bash
+      append: true
