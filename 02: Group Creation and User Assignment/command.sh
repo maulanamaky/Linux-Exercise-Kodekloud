@@ -21,8 +21,8 @@ ansible-playbook -i inventory playbook.yaml
 
 # You can test connectivity managed server
 ansible all -i inventory -m ping
-# You can test run with --check
-ansible-playbook -i inventory playbook.yaml
+# You can test run with --check before real run
+ansible-playbook -i inventory playbook.yaml --check
 
 # Troubleshooting
 # If you have a error with connectivity with some server, fill which_server with the name server:
